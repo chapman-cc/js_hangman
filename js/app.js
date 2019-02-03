@@ -9,7 +9,7 @@
         }
     });
 
-    const phrases = ['I love you', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Swinging For the Fences', 'On the Same Page', 'sunday'];
     const ul = document.querySelector('#phrase ul');
 
     //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
