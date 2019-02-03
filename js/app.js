@@ -7,10 +7,17 @@ overlayDiv.addEventListener('click', (e) => {
 });
 
 // list of possible phrase for game
-const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Swinging For the Fences', 'On the Same Page', 'sunday'];
+const phrases = [
+    'I love you',
+    'Never say never',
+    'Hashtag',
+    'Go For Broke',
+    'Swinging For the Fences',
+    'On the Same Page',
+    'sunday'];
 const ul = document.querySelector('#phrase ul');
-const qwerty = document.querySelector('#qwerty')
-const scoreBoardImg = document.querySelectorAll('#scoreboard img')
+const qwerty = document.querySelector('#qwerty');
+const scoreBoardImg = document.querySelectorAll('#scoreboard img');
 let missedScore = 0;
 
 //     Return a random phrase in array
@@ -72,7 +79,7 @@ const checkLose = () => {
     scoreBoardImg[missedScore].src = 'images/lostHeart.png';
     missedScore += 1;
     if (missedScore === scoreBoardImg.length) {
-        resetGame('lose')
+        resetGame('lose');
     }
 }
 
