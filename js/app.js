@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const addPhrasetoDisplay = (array) => {
         for (let i = 0; i < array.length; i++) {
             let li = document.createElement('li');
-            if (array[i].textContent) {
-                li.textContent = '';
+            li.textContent = array[i];
+            if (array[i] !== " ") {
+                li.className = 'space'; // TODO: include conditional to tell if space in array, then don't add 'letter' class to
             } else {
-                li.textContent = array[i];
-                li.className = 'letter'; // TODO: include conditional to tell if space in array, then don't add 'letter' class to them
+                li.className = 'letter';
             }
             ul.appendChild(li);
         }
