@@ -1,5 +1,4 @@
 // document.addEventListener('DOMContentLoaded', () => {
-    // list of possible phrase for game
 
     // Press "Start Game" button to remove overlay <div>
     const overlayDiv = document.querySelector('#overlay');
@@ -9,6 +8,7 @@
         }
     });
 
+    // list of possible phrase for game
     const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Swinging For the Fences', 'On the Same Page', 'sunday'];
     const ul = document.querySelector('#phrase ul');
 
