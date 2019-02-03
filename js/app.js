@@ -20,5 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return phrase;
     };
 
+    const phraseLi = (array, ul) => {
+        for (arr of array) {
+            let li = document.createElement('li');
+            li.textContent = arr;
+            ul.appendChild(li)
+        }
+    }
     //================================================================================
 });
