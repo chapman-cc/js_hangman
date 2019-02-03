@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // list of possible phrase for game
     const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const phraseSection = document.querySelector('#phrase');
+    const phraseUl = phraseSection.children;
 
     // Press "Start Game" button to remove overlay <div>
     const overlayDiv = document.querySelector('#overlay');
