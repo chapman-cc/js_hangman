@@ -12,7 +12,8 @@
     const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Swinging For the Fences', 'On the Same Page', 'sunday'];
     const ul = document.querySelector('#phrase ul');
     const qwerty = document.querySelector('#qwerty')
-    const scoreBoard = document.querySelector('#scoreboard ol')
+    const scoreBoardImg = document.querySelectorAll('#scoreboard img')
+    let winScore = 0;
     let missedScore = 0;
 
     //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
