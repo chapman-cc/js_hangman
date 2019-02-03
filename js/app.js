@@ -27,7 +27,7 @@
         for (let i = 0; i < array.length; i++) {
             let li = document.createElement('li');
             li.textContent = array[i];
-            if (array[i] !== " ") {
+            if (array[i] == " ") {
                 li.className = 'space'; // TODO: include conditional to tell if space in array, then don't add 'letter' class to
             } else {
                 li.className = 'letter';
