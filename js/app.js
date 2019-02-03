@@ -23,11 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return phraseArr;
     };
 
-    for (letter of randomPhrase) {
-        let li = document.createElement('li');
-        li.textContent = letter;
-        console.log(li);
-        ul.appendChild(li);
+    const addPhrasetoDisplay = (array) => {
+        for (let i = 0; i < array.length; i++) {
+            let li = document.createElement('li');
+            if (array[i].textContent) {
+                li.textContent = '';
+            } else {
+                li.textContent = array[i];
+                li.className = 'letter'; // TODO: include conditional to tell if space in array, then don't add 'letter' class to them
+            }
+            ul.appendChild(li);
+        }
     }
+
+    const phraseArray = getRandomPhraseAsArray(phrases);
+    addPhrasetoDisplay(phraseArray);
+
+
+
     //================================================================================
 });
