@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // list of possible phrase for game
+    const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
     // Press "Start Game" button to remove overlay <div>
     const overlayDiv = document.querySelector('#overlay');
@@ -8,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
     //     Create a getRandomPhraseAsArray function.
     const getRandomPhrase = (array) => {
