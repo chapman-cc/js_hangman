@@ -51,6 +51,21 @@ const checkLetter = (letter) => {
         }
     }
 //     if (letter === ???)
+};
+
+const checkWin = () => {
+    const list = ul.children;
+    let count = 0;
+    for (li of list) {
+        if (li.className === 'show' || li.className === 'space'){
+            count += 1;
+        }
+    }
+    if (count === list.length) {
+        alert('You Win')
+    }
+
+};
 
 const checkScore = () => {
     if (missedScore < scoreBoard.children.length - 1) {
