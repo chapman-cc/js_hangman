@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //Attach a event listener to the “Start Game” button to hide the start screen overlay.
-    const resetButton = document.querySelector('.btn__reset');
-    resetButton.addEventListener('click', (e) => {
-        const overlay = resetButton.parentNode;
-        overlay.style.display = 'none'
-    })
+
+    // Press "Start Game" button to remove overlay <div>
+    const overlayDiv = document.querySelector('#overlay');
+    overlayDiv.addEventListener('click', (e) => {
+        if (e.target.className === 'btn__reset') {
+            overlayDiv.style.display = 'none';
+        }
+    });
+
+
+
     //================================================================================
 });
