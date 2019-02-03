@@ -69,17 +69,16 @@ const checkLetter = (letter) => {
 };
 
 const checkWin = () => {
+    winScore += 1;
     const list = ul.children;
-    let count = 0;
+    let isLetter = false
     for (li of list) {
-        if (li.className === 'show' || li.className === 'space'){
-            count += 1;
-        }
+        li.className === 'letter' ? isLetter = true : isLetter = false;
     }
-    if (count === list.length) {
-        alert('You Win')
+    if (!isLetter) {
+        alert('you win')
+        resetGame()
     }
-
 };
 
 const checkLose = () => {
