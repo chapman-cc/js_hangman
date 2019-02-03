@@ -11,6 +11,8 @@
     // list of possible phrase for game
     const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Swinging For the Fences', 'On the Same Page', 'sunday'];
     const ul = document.querySelector('#phrase ul');
+    const scoreBoard = document.querySelector('#scoreboard ol')
+    let missedScore = 0;
 
     //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
     const getRandomPhraseAsArray = (array) => {
@@ -50,13 +52,22 @@ const checkLetter = (letter) => {
     }
 //     if (letter === ???)
 
+const checkScore = () => {
+    if (missedScore < scoreBoard.children.length - 1) {
+    missedScore += 1;
+} else {
+    alert('You Lose');
+    overlayDiv.style.display = '';
+}
+}
 
     //================================================================================
 // });
 qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
         e.target.className = 'chosen';
-        e.target.setAttribute('disabled', '')
-        let letterFound = checkLetter(e.target.textContent)
+        e.target.setAttribute('disabled', '');
+        let letterFound = checkLetter(e.target.textContent);
+        if (!letterFound) {checkScore()}
     }
 }, false);
