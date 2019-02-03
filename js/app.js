@@ -9,17 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-    const phraseSection = document.querySelector('#phrase');
-    const ul = phraseSection.querySelector('ul');
+    const phrases = ['I love you'] //, 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const ul = document.querySelector('#phrase ul');
 
-    //     Return a random phrase e.g. 'Monday', or 'Wednesday'
-    const getRandomPhraseArray = (array) => {
+    //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
+    const getRandomPhraseAsArray = (array) => {
         let randomNum = Math.round(Math.random() * (array["length"] - 1));
-        let phrase = array[randomNum]; //e.g. 'tuesday'
-        return phrase;
+        let randomWord = array[randomNum]; //e.g. 'tuesday'
+        let phraseArr = [];
+        for (let i = 0; i < randomWord.length; i++) {
+            phraseArr.push(randomWord[i]);
+        }
+        return phraseArr;
     };
-    let randomPhrase = getRandomPhraseArray(phrases);
 
     for (letter of randomPhrase) {
         let li = document.createElement('li');
