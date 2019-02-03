@@ -51,16 +51,15 @@ qwerty.addEventListener('click', (e) => {
         e.target.className = 'chosen';
         e.target.disabled = true;
         let letterFound = checkLetter(e.target.textContent);
-        console.log(letterFound);
-        // letterFound ? checkWin() : checkScore();
-    }
-}, false);
+        letterFound ? checkWin() : checkLose();
+        }
+    })
 
 const checkLetter = (letter) => {
     const list = ul.children;
     let isCorrect = false;
     for (li of list) {
-        if (li.className === 'letter' && letter.toUpperCase() === li.textContent ) {
+        if (li.className === 'letter' && li.textContent === letter.toUpperCase() ) {
             li.className = 'show';
             isCorrect = true;
         }
