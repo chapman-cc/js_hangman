@@ -43,3 +43,10 @@
 
     //================================================================================
 // });
+qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.className = 'chosen';
+        e.target.setAttribute('disabled', '')
+        let letterFound = checkLetter(e.target.textContent)
+    }
+}, false);
