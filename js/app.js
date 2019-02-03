@@ -1,5 +1,3 @@
-// document.addEventListener('DOMContentLoaded', () => {
-
 // Press "Start Game" button to remove overlay <div>
 const overlayDiv = document.querySelector('#overlay');
 overlayDiv.addEventListener('click', (e) => {
@@ -44,9 +42,7 @@ let phraseArray = getRandomPhraseAsArray(phrases);
 addPhrasetoDisplay(phraseArray);
 
 //================================================================================
-
-
-
+//  function to check if letter guessing is right, return the letter if true
 const checkLetter = (letter) => {
     const list = ul.children;
     let isCorrect = false;
@@ -61,6 +57,7 @@ const checkLetter = (letter) => {
     }
 };
 
+// function to run if letter guess is right, will resetGame() if no more .letter class in phrase
 const checkWin = () => {
     winScore += 1;
     const list = ul.children;
@@ -72,7 +69,7 @@ const checkWin = () => {
         resetGame('win')
     }
 };
-
+// function to run if letter guess is wrong, will change socreBoard img, and if missedScore accumulate to length of scoreBoardImg, will resetGame()
 const checkLose = () => {
     scoreBoardImg[missedScore].src = 'images/lostHeart.png';
     missedScore += 1;
@@ -80,6 +77,8 @@ const checkLose = () => {
         resetGame('lose')
     }
 }
+
+//  event listener to on screen keyboard picks, add a class and disabled click
 qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
         e.target.className = 'chosen';
@@ -88,7 +87,7 @@ qwerty.addEventListener('click', (e) => {
         letterFound ? checkWin() : checkLose()
     }
 });
-
+// function to reset the game
 const resetGame = (winLose) => {
     overlayDiv.className = winLose;
     overlayDiv.style.display = '';
@@ -107,5 +106,3 @@ const resetGame = (winLose) => {
         img.src = 'images/liveHeart.png'
     })
 };
-//================================================================================
-// });
