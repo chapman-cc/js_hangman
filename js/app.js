@@ -39,6 +39,16 @@
     const phraseArray = getRandomPhraseAsArray(phrases);
     addPhrasetoDisplay(phraseArray);
 
+//================================================================================
+const checkLetter = (letter) => {
+    const list = ul.children;
+    for (li of list) {
+        if (li.className === 'letter' && letter.toUpperCase() === li.textContent ) {
+            li.className = 'show';
+            return letter;
+        }
+    }
+//     if (letter === ???)
 
 
     //================================================================================
