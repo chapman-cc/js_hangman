@@ -67,8 +67,7 @@ const checkWin = () => {
         li.className === 'letter' ? isLetter = true : isLetter = false;
     }
     if (!isLetter) {
-        alert('you win')
-        resetGame()
+        resetGame('win')
     }
 };
 
@@ -76,8 +75,7 @@ const checkLose = () => {
     scoreBoardImg[missedScore].src = 'images/lostHeart.png';
     missedScore += 1;
     if (missedScore === scoreBoardImg.length) {
-        alert('You Lose');
-        resetGame()
+        resetGame('lose')
     }
 }
 qwerty.addEventListener('click', (e) => {
@@ -89,18 +87,23 @@ qwerty.addEventListener('click', (e) => {
     }
 });
 
-const resetGame = () => {
+const resetGame = (winLose) => {
+    overlayDiv.className = winLose;
     overlayDiv.style.display = '';
-    const list = ul.children;
-    for (li of list) {
-        li.className === 'show' ? li.className = 'letter': null;
+    while (ul.childElementCount > 0) {
+        ul.removeChild(ul.children[0])
     }
-    const buttons = qwerty.querySelectorAll('button');
-    for (button in buttons) {
+    phraseArray = getRandomPhraseAsArray(phrases);
+    addPhrasetoDisplay(phraseArray);
+    missedScore = 0;
+    let buttons = qwerty.querySelectorAll('button');
+    buttons.forEach(button => {
         button.className = '';
         button.disabled = false;
-    };
-    missedScore = 0;
-}
+    });
+    scoreBoardImg.forEach(img => {
+        img.src = 'images/liveHeart.png'
+    })
+};
 //================================================================================
 // });
