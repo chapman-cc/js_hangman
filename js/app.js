@@ -46,14 +46,6 @@
 //================================================================================
 
 
-qwerty.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-        e.target.className = 'chosen';
-        e.target.disabled = true;
-        let letterFound = checkLetter(e.target.textContent);
-        letterFound ? checkWin() : checkLose();
-        }
-    })
 
 const checkLetter = (letter) => {
     const list = ul.children;
@@ -88,6 +80,14 @@ const checkLose = () => {
         resetGame()
     }
 }
+qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.className = 'chosen';
+        e.target.disabled = true;
+        let letterFound = checkLetter(e.target.textContent);
+        letterFound ? checkWin() : checkLose()
+    }
+});
 
 const resetGame = () => {
     overlayDiv.style.display = '';
