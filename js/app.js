@@ -11,7 +11,6 @@ const phrases = ['I love you', 'Never say never', 'Hashtag', 'Go For Broke', 'Sw
 const ul = document.querySelector('#phrase ul');
 const qwerty = document.querySelector('#qwerty')
 const scoreBoardImg = document.querySelectorAll('#scoreboard img')
-let winScore = 0;
 let missedScore = 0;
 
 //     Return a random phrase in array
@@ -59,7 +58,6 @@ const checkLetter = (letter) => {
 
 // function to run if letter guess is right, will resetGame() if no more .letter class in phrase
 const checkWin = () => {
-    winScore += 1;
     const list = ul.children;
     let isLetter = false;
     for (li of list) {
