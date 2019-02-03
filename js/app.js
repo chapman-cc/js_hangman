@@ -15,7 +15,7 @@
     //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
     const getRandomPhraseAsArray = (array) => {
         let randomNum = Math.round(Math.random() * (array["length"] - 1));
-        let randomWord = array[randomNum]; //e.g. 'tuesday'
+        let randomWord = array[randomNum].toUpperCase(); //e.g. 'TUESDAY'
         let phraseArr = [];
         for (let i = 0; i < randomWord.length; i++) {
             phraseArr.push(randomWord[i]);
