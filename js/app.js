@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     // list of possible phrase for game
 
     // Press "Start Game" button to remove overlay <div>
@@ -42,4 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //================================================================================
-});
+// });
