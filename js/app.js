@@ -31,7 +31,7 @@
             let li = document.createElement('li');
             li.textContent = array[i];
             if (array[i] == " ") {
-                li.className = 'space'; // TODO: include conditional to tell if space in array, then don't add 'letter' class to
+                li.className = 'space';
             } else {
                 li.className = 'letter';
             }
@@ -43,15 +43,28 @@
     addPhrasetoDisplay(phraseArray);
 
 //================================================================================
+
+
+qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.className = 'chosen';
+        e.target.disabled = true;
+        let letterFound = checkLetter(e.target.textContent);
+        console.log(letterFound);
+        // letterFound ? checkWin() : checkScore();
+    }
+}, false);
+
 const checkLetter = (letter) => {
     const list = ul.children;
+    let isCorrect = false;
     for (li of list) {
         if (li.className === 'letter' && letter.toUpperCase() === li.textContent ) {
             li.className = 'show';
-            return letter;
+            isCorrect = true;
         }
     }
-//     if (letter === ???)
+    if (isCorrect) {return letter;}
 };
 
 const checkWin = () => {
@@ -70,20 +83,25 @@ const checkWin = () => {
 
 const checkScore = () => {
     if (missedScore < scoreBoard.children.length - 1) {
-    missedScore += 1;
-} else {
-    alert('You Lose');
-    overlayDiv.style.display = '';
-}
+        missedScore += 1;
+    } else {
+        alert('You Lose');
+        resetGame()
+    }
 }
 
-    //================================================================================
-// });
-qwerty.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-        e.target.className = 'chosen';
-        e.target.setAttribute('disabled', '');
-        let letterFound = checkLetter(e.target.textContent);
-        if (!letterFound) {checkScore()}
+const resetGame = () => {
+    overlayDiv.style.display = '';
+    const list = ul.children;
+    for (li of list) {
+        li.className === 'show' ? li.className = 'letter': null;
     }
-}, false);
+    const buttons = qwerty.querySelectorAll('button');
+    for (button in buttons) {
+        button.className = '';
+        button.disabled = false;
+    };
+    missedScore = 0;
+}
+//================================================================================
+// });
