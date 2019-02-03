@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const phrases = ['I love you'] //, 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const phrases = ['I love you', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     const ul = document.querySelector('#phrase ul');
 
     //     Return a random phrase in array e.g. ["t", "u", "e", "s", "d", "a", "y"]
