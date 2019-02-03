@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
+    //     Create a getRandomPhraseAsArray function.
+    const getRandomPhrase = (array) => {
+        let randomNum = Math.round(Math.random() * (array["length"] - 1));
+        let phrase = array[randomNum]; //e.g. 'tuesday'
+        return phrase;
+    };
 
     //================================================================================
 });
