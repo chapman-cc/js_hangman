@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const phrases = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 
     //================================================================================
