@@ -82,10 +82,10 @@ const checkWin = () => {
 
 };
 
-const checkScore = () => {
-    if (missedScore < scoreBoard.children.length - 1) {
-        missedScore += 1;
-    } else {
+const checkLose = () => {
+    scoreBoardImg[missedScore].src = 'images/lostHeart.png';
+    missedScore += 1;
+    if (missedScore === scoreBoardImg.length) {
         alert('You Lose');
         resetGame()
     }
