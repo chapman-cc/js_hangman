@@ -5,14 +5,13 @@ const phrases = [
     'i love you',
     'never say never',
     'hashtag',
-    'go For broke',
+    'go for broke',
     'swinging for the fences',
     'on the same page',
     'sunday'
 ];
 const overlayDiv = document.querySelector('#overlay');
 const phraseSection = document.querySelector('#phrase ul');
-const phraseLi = phraseSection.querySelectorAll('li')
 const qwerty = document.querySelector('#qwerty');
 const scoreBoardImg = document.querySelectorAll('#scoreboard img');
 let missedScore = 0;
