@@ -56,10 +56,12 @@ addPhrasetoDisplay(phraseArray);
 
 //================================================================================
 //  function to check if letter guessing is right, return the letter if true
+
+const phraseList = phraseSection.querySelectorAll('li');
+
 const checkLetter = (letter) => {
-    const list = phraseSection.children;
     let isCorrect = false;
-    for (li of list) {
+    for (li of phraseList) {
         if (li.className === 'letter' && li.textContent === letter) {
             li.className = 'show';
             isCorrect = true;
@@ -72,9 +74,8 @@ const checkLetter = (letter) => {
 
 // function to run if letter guess is right, will resetGame() if no more .letter class in phrase
 const checkWin = () => {
-    const list = phraseSection.children;
     let isLetter = false;
-    for (li of list) {
+    for (li of phraseList) {
         li.className === 'letter' ? isLetter = true : null;
     }
     if (!isLetter) {
