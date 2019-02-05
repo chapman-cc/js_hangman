@@ -15,7 +15,8 @@ const phrases = [
     'Swinging For the Fences',
     'On the Same Page',
     'sunday'];
-const ul = document.querySelector('#phrase ul');
+const phraseSection = document.querySelector('#phrase ul');
+const phraseLi = phraseSection.querySelectorAll('li')
 const qwerty = document.querySelector('#qwerty');
 const scoreBoardImg = document.querySelectorAll('#scoreboard img');
 let missedScore = 0;
@@ -40,7 +41,7 @@ const addPhrasetoDisplay = (array) => {
         } else {
             li.className = 'letter';
         }
-        ul.appendChild(li);
+        phraseSection.appendChild(li);
     }
 }
 
@@ -50,7 +51,7 @@ addPhrasetoDisplay(phraseArray);
 //================================================================================
 //  function to check if letter guessing is right, return the letter if true
 const checkLetter = (letter) => {
-    const list = ul.children;
+    const list = phraseSection.children;
     let isCorrect = false;
     for (li of list) {
         if (li.className === 'letter' && li.textContent === letter.toUpperCase()) {
@@ -65,7 +66,7 @@ const checkLetter = (letter) => {
 
 // function to run if letter guess is right, will resetGame() if no more .letter class in phrase
 const checkWin = () => {
-    const list = ul.children;
+    const list = phraseSection.children;
     let isLetter = false;
     for (li of list) {
         li.className === 'letter' ? isLetter = true : null;
@@ -96,8 +97,8 @@ qwerty.addEventListener('click', (e) => {
 const resetGame = (winLose) => {
     overlayDiv.className = winLose;
     overlayDiv.style.display = '';
-    while (ul.childElementCount > 0) {
-        ul.removeChild(ul.children[0])
+    while (phraseSection.childElementCount > 0) {
+        phraseSection.removeChild(phraseSection.children[0])
     }
     phraseArray = getRandomPhraseAsArray(phrases);
     addPhrasetoDisplay(phraseArray);
