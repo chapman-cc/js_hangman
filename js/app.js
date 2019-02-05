@@ -66,7 +66,9 @@ const checkLetter = (letter) => {
             isCorrect = true;
         }
     }
-    if (isCorrect) {return letter}
+    if (isCorrect) {
+        return letter
+    }
 };
 
 // function to run if letter guess is right, will resetGame() if no more .letter class in phrase
@@ -75,7 +77,9 @@ const checkWin = () => {
     for (li of phraseList) {
         li.className === 'letter' ? isLetter = true : null;
     }
-    if (!isLetter) {resetGame('win')}
+    if (!isLetter) {
+        resetGame('win')
+    }
 };
 // function to run if letter guess is wrong, will change socreBoard img, and if missedScore accumulate to length of scoreBoardImg, will resetGame()
 const checkLose = () => {
