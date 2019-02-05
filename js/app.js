@@ -2,12 +2,12 @@
 // -------------------- VARIABLES --------------------
 
 const phrases = [
-    'I love you',
-    'Never say never',
-    'Hashtag',
-    'Go For Broke',
-    'Swinging For the Fences',
-    'On the Same Page',
+    'i love you',
+    'never say never',
+    'hashtag',
+    'go For broke',
+    'swinging for the fences',
+    'on the same page',
     'sunday'
 ];
 const overlayDiv = document.querySelector('#overlay');
