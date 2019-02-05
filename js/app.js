@@ -32,17 +32,17 @@ const getRandomPhraseAsArray = (phrase) => {
     let randomNum = Math.round(Math.random() * (phrase.length - 1));
     let randomWord = phrase[randomNum];
     let phraseArr = [];
-    for (let i = 0; i < randomWord.length; i++) {
-        phraseArr.push(randomWord[i]);
+    for (letter of randomWord) {
+        phraseArr.push(letter);
     }
     return phraseArr;
 };
 
 const addPhrasetoDisplay = (array) => {
-    for (let i = 0; i < array.length; i++) {
+    for (arr of array) {
         let li = document.createElement('li');
-        li.textContent = array[i];
-        if (array[i] == " ") {
+        li.textContent = arr;
+        if (arr == " ") {
             li.className = 'space';
         } else {
             li.className = 'letter';
