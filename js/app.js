@@ -30,7 +30,7 @@ overlayDiv.addEventListener('click', (e) => {
 //     Return a random phrase in array
 const getRandomPhraseAsArray = (array) => {
     let randomNum = Math.round(Math.random() * (array["length"] - 1));
-    let randomWord = array[randomNum].toUpperCase();
+    let randomWord = phrase[randomNum];
     let phraseArr = [];
     for (let i = 0; i < randomWord.length; i++) {
         phraseArr.push(randomWord[i]);
@@ -60,7 +60,7 @@ const checkLetter = (letter) => {
     const list = phraseSection.children;
     let isCorrect = false;
     for (li of list) {
-        if (li.className === 'letter' && li.textContent === letter.toUpperCase()) {
+        if (li.className === 'letter' && li.textContent === letter) {
             li.className = 'show';
             isCorrect = true;
         }
