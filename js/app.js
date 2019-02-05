@@ -100,6 +100,7 @@ qwerty.addEventListener('click', (e) => {
 const resetGame = (winLose) => {
     overlayDiv.className = winLose;
     overlayDiv.style.display = '';
+    overlayDiv.lastElementChild.textContent = 'Reset Game';
     while (phraseSection.childElementCount > 0) {
         phraseSection.removeChild(phraseSection.children[0])
     }
