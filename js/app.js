@@ -1,12 +1,6 @@
-// Press "Start Game" button to remove overlay <div>
-const overlayDiv = document.querySelector('#overlay');
-overlayDiv.addEventListener('click', (e) => {
-    if (e.target.className === 'btn__reset') {
-        overlayDiv.style.display = 'none';
-    }
-});
+// ---------------------------------------------------
+// -------------------- VARIABLES --------------------
 
-// list of possible phrase for game
 const phrases = [
     'I love you',
     'Never say never',
@@ -14,12 +8,24 @@ const phrases = [
     'Go For Broke',
     'Swinging For the Fences',
     'On the Same Page',
-    'sunday'];
+    'sunday'
+];
+const overlayDiv = document.querySelector('#overlay');
 const phraseSection = document.querySelector('#phrase ul');
 const phraseLi = phraseSection.querySelectorAll('li')
 const qwerty = document.querySelector('#qwerty');
 const scoreBoardImg = document.querySelectorAll('#scoreboard img');
 let missedScore = 0;
+
+
+// Press "Start Game" button to remove overlay <div>
+overlayDiv.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        overlayDiv.style.display = 'none';
+    }
+});
+
+// list of possible phrase for game
 
 //     Return a random phrase in array
 const getRandomPhraseAsArray = (array) => {
