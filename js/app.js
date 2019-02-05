@@ -119,5 +119,5 @@ const resetGame = (winLose) => {
         scoreBoardImg.forEach(img => {
             img.src = 'images/liveHeart.png'
         })
-    }, 1500)
+    }, 1000)
 };
