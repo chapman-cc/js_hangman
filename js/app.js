@@ -28,8 +28,8 @@ overlayDiv.addEventListener('click', (e) => {
 // list of possible phrase for game
 
 //     Return a random phrase in array
-const getRandomPhraseAsArray = (array) => {
-    let randomNum = Math.round(Math.random() * (array["length"] - 1));
+const getRandomPhraseAsArray = (phrase) => {
+    let randomNum = Math.round(Math.random() * (phrase.length - 1));
     let randomWord = phrase[randomNum];
     let phraseArr = [];
     for (let i = 0; i < randomWord.length; i++) {
