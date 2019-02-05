@@ -96,26 +96,28 @@ qwerty.addEventListener('click', (e) => {
         e.target.className = 'chosen';
         e.target.disabled = true;
         let letterFound = checkLetter(e.target.textContent);
-        letterFound ? checkWin() : checkLose()
+        letterFound ? checkWin() : checkLose();
     }
 });
 // function to reset the game
 const resetGame = (winLose) => {
-    overlayDiv.className = winLose;
-    overlayDiv.style.display = '';
-    overlayDiv.lastElementChild.textContent = 'Reset Game';
-    while (phraseSection.childElementCount > 0) {
-        phraseSection.removeChild(phraseSection.children[0])
-    }
-    phraseArray = getRandomPhraseAsArray(phrases);
-    addPhrasetoDisplay(phraseArray);
-    missedScore = 0;
-    let buttons = qwerty.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.className = '';
-        button.disabled = false;
-    });
-    scoreBoardImg.forEach(img => {
-        img.src = 'images/liveHeart.png'
-    })
+    setTimeout(() => {
+        overlayDiv.className = winLose;
+        overlayDiv.style.display = '';
+        overlayDiv.lastElementChild.textContent = 'Reset Game';
+        while (phraseSection.childElementCount > 0) {
+            phraseSection.removeChild(phraseSection.children[0])
+        }
+        phraseArray = getRandomPhraseAsArray(phrases);
+        addPhrasetoDisplay(phraseArray);
+        missedScore = 0;
+        let buttons = qwerty.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.className = '';
+            button.disabled = false;
+        });
+        scoreBoardImg.forEach(img => {
+            img.src = 'images/liveHeart.png'
+        })
+    }, 1500)
 };
