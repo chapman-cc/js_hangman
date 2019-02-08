@@ -41,11 +41,12 @@ const addPhrasetoDisplay = (array) => {
     for (arr of array) {
         let li = document.createElement('li');
         li.textContent = arr;
-        if (arr == " ") {
-            li.className = 'space';
-        } else {
-            li.className = 'letter';
-        }
+        li.className = (arr === " ") ?  'space' : 'letter';
+        // if (arr == " ") {
+        //     li.className = 'space';
+        // } else {
+        //     li.className = 'letter';
+        // }
         phraseSection.appendChild(li);
     }
 }
