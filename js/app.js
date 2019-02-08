@@ -28,7 +28,7 @@ overlayDiv.addEventListener('click', (e) => {
 
 //     Return a random phrase in array
 const getRandomPhraseAsArray = (phrase) => {
-    let randomNum = Math.round(Math.random() * (phrase.length - 1));
+    let randomNum = Math.floor(Math.random() * (phrase.length));
     let randomWord = phrase[randomNum];
     let phraseArr = [];
     for (letter of randomWord) {
