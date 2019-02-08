@@ -60,16 +60,14 @@ addPhrasetoDisplay(phraseArray);
 const phraseList = phraseSection.querySelectorAll('li');
 
 const checkLetter = (letter) => {
-    let isCorrect = false;
+    let result = null;
     for (li of phraseList) {
         if (li.className === 'letter' && li.textContent === letter) {
             li.className = 'show';
-            isCorrect = true;
+            result = letter;
         }
     }
-    if (isCorrect) {
-        return letter
-    }
+    return result
 };
 
 // function to run if letter guess is right, will resetGame() if no more .letter class in phrase
