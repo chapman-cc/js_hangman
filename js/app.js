@@ -57,7 +57,7 @@ addPhrasetoDisplay(phraseArray);
 //================================================================================
 //  function to check if letter guessing is right, return the letter if true
 
-const phraseList = phraseSection.querySelectorAll('li');
+let phraseList = phraseSection.querySelectorAll('li');
 
 const checkLetter = (letter) => {
     let result = null;
@@ -110,6 +110,7 @@ const resetGame = (winLose) => {
         // }
         phraseArray = getRandomPhraseAsArray(phrases);
         addPhrasetoDisplay(phraseArray);
+        phraseList = phraseSection.querySelectorAll('li');
         missedScore = 0;
         let buttons = qwerty.querySelectorAll('button');
         buttons.forEach(button => {
